@@ -1,0 +1,40 @@
+addtotal=0;
+for r = 1:1000
+    total=0;
+    for i = 1:5
+        d=randi([0,10])/10; %this will calculate a random number between 0 and 1
+                
+    score=0;
+         if (d<1/3) %white section
+	             score=score+5;
+                 total = total + score;
+
+         elseif (d>=1/3) && (d<7/12) %red section
+	            score=score+10;
+                total = total + score;      
+	
+         elseif (d>=7/12 && d< 19/24) %blue section
+	           score=score+15;
+               score;
+               total = total + score;
+                
+         elseif (d>=19/24 && d<11/12) %yellow section
+	            score=score+25;
+                score;
+                total = total + score;
+
+         elseif (d >=11/12) %bullseye
+	            score=score+50;
+                score;
+                total = total + score;
+        end
+        total;
+        addtotal=addtotal+total; %this calculates the score of the 5 rounds
+         
+     end
+     addtotal;
+     scoremean= addtotal/5;%this calculates the mean score of each round
+
+end
+overallmean = scoremean/1000  %this calculates our mean of throwing 5 darts for 1,000 simulations
+  
